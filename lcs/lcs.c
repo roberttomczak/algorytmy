@@ -3,7 +3,7 @@
 
 /*Longest common sequence*/
 
-void PRINT_LCS(char b[][20],char x[],int i,int j){
+void PRINT_LCS(char b[][50],char x[],int i,int j){
 	if(i==0 || j==0)
 		return;
 	if(b[i][j]=='u'){				/*Jesli w tablicy b jest u to drukuje litere na ukos*/
@@ -18,8 +18,8 @@ void PRINT_LCS(char b[][20],char x[],int i,int j){
 
 void LCS_LENGTH(char x[],char y[]){
 
-int m,n,i,j,c[20][20];
-char b[20][20];
+int m,n,i,j,c[50][50];
+char b[50][50];
 m=strlen(x);			/*Dlugosc x*/
 n=strlen(y);    		/*Dlugosc y*/
 for(i=0;i<=m;i++)		
@@ -33,7 +33,7 @@ for(i=1;i<=m;i++)
 				c[i][j]=c[i-1][j-1]+1; 
 				b[i][j]='u';           /*jesli tak to wstawiamy u myslac o indeksie literze na ukos*/
 		}
-		else if(c[i-1][j]>=c[i][j-1])	/*jesli nie to sprawdzamy który indeks jest większy*/
+		else if(c[i-1][j]>=c[i][j-1])	/*jesli nie to sprawdzamy ktory indeks jest większy*/
 		{
 			c[i][j]=c[i-1][j];			/*Jesli gorny to wstawiamy g*/
 			b[i][j]='g';         
@@ -48,8 +48,11 @@ PRINT_LCS(b,x,m,n);      				/*wywolujemy funkcje print*/
 }   
 
 int main(){
-
-
-
-  return 0;
+	
+    char x[50],y[50];     
+    gets(x);
+    gets(y); 
+    LCS_LENGTH(x,y);  
+    
+    return 0;
 }
