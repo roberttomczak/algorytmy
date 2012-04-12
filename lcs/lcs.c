@@ -28,7 +28,7 @@ for(i=0;i<=n;i++)
 	c[0][i]=0;			/*Wstawiamy zera do pierwszego wiersza*/
 for(i=1;i<=m;i++)
 	for(j=1;j<=n;j++){
-		if(x[i]==y[j])  /*sprawdzamy czy litery na tych samych indeksach sa takie same*/
+		if(x[i-1]==y[j-1])  /*sprawdzamy czy litery na tych samych indeksach sa takie same*/
 		{
 				c[i][j]=c[i-1][j-1]+1; 
 				b[i][j]='u';           /*jesli tak to wstawiamy u myslac o indeksie literze na ukos*/
